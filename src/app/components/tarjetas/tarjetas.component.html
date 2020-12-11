@@ -1,0 +1,15 @@
+<div class="container animated fadeIn" style="display: grid;grid-template-columns: repeat(3, 1fr); margin-top: 50px;">
+
+    <div (click)="verArtista( item )" class="card puntero" style="width: 18rem; justify-self: center; margin-bottom: 16px;" *ngFor="let item of items">
+        <img src="{{ item.images | noimage }}" class="card-img-top" alt="Imagen cancion ">
+        <div class="card-body ">
+            <h5 class="card-title ">{{ item.name }}</h5>
+            <p class="card-text ">
+                <span *ngFor="let artista of item.artists" style="color: black;">{{ artista.name }} <br></span>
+            </p>
+        </div>
+        <div class="card-footer" *ngIf="item.album_type != null">
+            <small class="text-muted">Tipo: {{ item.album_type }}</small>
+        </div>
+    </div>
+</div>
